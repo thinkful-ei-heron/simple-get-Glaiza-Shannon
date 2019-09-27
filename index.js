@@ -17,6 +17,8 @@ function extractImages(resData, num) {
   } = resData
   for (let i=0; i < num; i++){
     console.log(message[i]);
+    $('.results').append(`<img src = ${message[i]}>`);
+    
   }
 }
 
@@ -24,9 +26,9 @@ function submitButton() {
   $('.searchDogImages').submit(function(event) {
     event.preventDefault();
     let numberInput = $('.userInputNumber').val();
-    (numberInput >= 50 || numberInput < 1) ? console.log('Invalid Input') : getImages(numberInput);
-    
+    getImages(numberInput);
   });
 }
 
 $(submitButton);
+
