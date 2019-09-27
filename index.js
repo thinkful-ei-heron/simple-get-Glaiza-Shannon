@@ -4,7 +4,7 @@ function getImages(num) {
   fetch('https://dog.ceo/api/breeds/image/random/50')
     .then(res => {
       //console.log(res);
-      return res.json()
+      return res.json();
     })
     .then(resData => extractImages(resData, num))
     .catch(error => console.log(error));
@@ -14,7 +14,7 @@ function getImages(num) {
 function extractImages(resData, num) {
   let {
     message,
-  } = resData
+  } = resData;
   for (let i=0; i < num; i++){
     console.log(message[i]);
     $('.results').append(`<img src = ${message[i]}>`);
