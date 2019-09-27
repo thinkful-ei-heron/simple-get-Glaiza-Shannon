@@ -1,5 +1,4 @@
-const endpoint = "https://dog.ceo/api/breeds/image/random/50";
-
+'use strict';
 
 function getImages(num) {
   fetch('https://dog.ceo/api/breeds/image/random/50')
@@ -25,7 +24,8 @@ function submitButton() {
   $('.searchDogImages').submit(function(event) {
     event.preventDefault();
     let numberInput = $('.userInputNumber').val();
-    getImages(numberInput);
+    (numberInput >= 50 || numberInput < 1) ? console.log('Invalid Input') : getImages(numberInput);
+    
   });
 }
 
